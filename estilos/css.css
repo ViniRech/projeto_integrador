@@ -24,17 +24,6 @@
     height: auto;
 }
 
-#openMenu,
-#closeMenu {
-    border: none;
-    background: none;
-    font-size: 30px;
-    font-weight: bold;
-    padding: 0px 5px 0px 5px;
-    cursor: pointer;
-    display: none;
-}
-
 .nav {
     display: grid;
     grid-template-columns: 1fr 7fr;
@@ -69,6 +58,13 @@
     background-color: #fff;
     border-radius: 3px;
     transition: all ease .3s;
+}
+
+.menu-fake:checked, .menu-fake:checked ~ .menu-linhas  {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .menu-fake:checked ~ .menu-linhas span {
@@ -302,10 +298,11 @@
 @media only screen and (max-width: 717px) {
 
     .menu-linhas, .menu-fake {
-        margin: 30px 30px 0 0;
+        margin: 40px 40px 0 0;
     }
 
     .nav {
+        position: fixed;
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 3rem 3rem 4rem;
@@ -314,11 +311,15 @@
         right: 0;
         top: 0;
         width: 30%;
-        height: calc(100vh - 100px);
+        height: 100%;
         padding-top: 100px;
         background-color: #3C3B6E;
         margin-right: -100%;
         transition: all ease .3s;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .nav-menu, .nav-link {
